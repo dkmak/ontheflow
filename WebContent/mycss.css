@@ -1,1 +1,41 @@
 @charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #121212;
+	padding-top: 25px;
+}
+
+#header{
+	background-color: #1db954;
+	height: 150px;
+	line-height: 150px;
+	width: auto;
+}
+
+#title{
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+}
+
+h1, h2, h3, h4, h6 {
+	color: #b3b3b3;
+	font-family: "Titillium Web", sans-serif, Tahoma;
+	font-weight: bold;
+}
+
+p {
+	color: white;
+	font-family: "Open Sans", sans-serif, Tahoma;
+	
+}
+
+
+/* Alternate color and styling if it clashes with the background*/
+.alt-text {
+	color: black; 
+}
