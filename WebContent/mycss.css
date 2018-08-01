@@ -4,8 +4,13 @@
 	box-sizing: border-box;
 }
 
+input {
+	display: block;
+	margin-bottom: 25px;
+}
+
 body {
-	background-color: black;
+	background-color: #121212;
 	padding-top: 25px;
 }
 
