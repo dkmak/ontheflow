@@ -1,1 +1,57 @@
 @charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	padding-top: 25px;
+}
+
+#header{
+	background-color: #1db954;
+	height: 75px;
+	width: auto;
+}
+
+title text-center{
+	text-align: center;
+	vertical-align: middle;
+	/*line-height: 150px;*/
+	color: white;
+}
+
+h1, h2, h3, h4, h6, b {
+	color: #fff;
+	font-family: "Titillium Web", sans-serif, Tahoma;
+	font-weight: bold;
+}
+
+p {
+	color: white;
+	font-family: "Open Sans", sans-serif, Tahoma;
+	
+}
+
+btn btn-default pull-right {
+	margin-right: 200px;
+}
+
+label {
+	color: white;
+}
+
+b {
+	color: inherit;
+}
+/* Alternate color and styling if it clashes with the background*/
+.alt-text {
+	color: black; 
+}
+
+table#t01  { 
+	width: 80% ;  
+	background-color: white; 
+}
+
