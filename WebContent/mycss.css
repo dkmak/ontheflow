@@ -4,6 +4,35 @@
 	box-sizing: border-box;
 }
 
+.prof {
+	height: 200px;
+	width: 200px;
+	margin-bottom: 15px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.font {
+	font-family: 'Do Hyeon', sans-serif, Tacoma;
+} 
+
+.white {
+	color: #f9f9f9;
+}
+
+.font-sz-lg {
+	font-size: 32px;
+}
+
+.font-sz-md {
+	font-size: 24px;
+}
+
+.font-sz-sm {
+	font-size: 24px;
+}
 
 body {
 	background: #121212;
@@ -13,16 +42,8 @@ body {
 label, input, button {
 	display: inline;
 	margin: 0px 0px 0px 30px;
-	font-family: "Concert One", Tacoma;
-	font-size: 24px;
-	
 }
 
-label {
-	font-family: "Concert One", Tacoma;
-	font-size: 24px;
-	
-}
 
 btn, btn-group {
 	margin-left: auto;
