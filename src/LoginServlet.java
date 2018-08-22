@@ -22,20 +22,6 @@ import com.wrapper.spotify.requests.authorization.authorization_code.Authorizati
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 private static final String clientId = "client";
-		private static final String clientSecret = "secret";
-		private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/app/index.html");
-
-		private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-		          .setClientId(clientId)
-		          .setClientSecret(clientSecret)
-		          .setRedirectUri(redirectUri)
-		          .build();
-		private static final AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
-		          .state("x4xkmn9pu3j6ukrs8n")
-		          .scope("user-read-birthdate,user-read-email")
-		          .show_dialog(true)
-		          .build();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -59,7 +45,9 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	    final URI uri = authorizationCodeUriRequest.execute();
+		User user = new User();
+		
+	    final URI uri = Spotify.authorizationCodeUriRequest.execute();
 
 	    System.out.println("URI: " + uri.toString());
 	    response.setContentType("application/json");
