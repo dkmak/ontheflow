@@ -5,6 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
+  	<dependency>
+  		<groupId>se.michaelthelin.spotify</groupId>
+  		<artifactId>spotify-web-api-java</artifactId>
+  		<version>2.0.4</version>
+	</dependency>
     <dependency>
     	  <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
