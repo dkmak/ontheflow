@@ -13,3 +13,10 @@ function getParameterByName(target) {
     // Return the decoded parameter value
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+
+
+let code = getParameterByName('code');
+console.log(code);
+
+//take code, make AJAX call to a servlet that sets the code, creates tokens
