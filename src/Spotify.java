@@ -8,7 +8,7 @@ import com.wrapper.spotify.model_objects.credentials.AuthorizationCodeCredential
 import com.wrapper.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import com.wrapper.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
 /*
- * Class to handle anything Spotify related
+ * Class to handle anything Spotify related(getting URI, getting tokens)
  * */
 public class Spotify {
 	private static final String clientId = "***REMOVED***";
@@ -17,6 +17,7 @@ public class Spotify {
 	private static String code="";
 	private static AuthorizationCodeRequest authorizationCodeRequest;
 	private static AuthorizationCodeCredentials authorizationCodeCredentials;
+	
 	
 	
 	public static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
@@ -32,6 +33,12 @@ public class Spotify {
 		          .show_dialog(true)
 		          .build();
 
+	
+	public static URI getUriRequest() {
+		final URI uri = authorizationCodeUriRequest.execute();
+		return uri;
+	}
+	
 	/*
 	 * Set the code returned by the Spotify API and build the authorizationCodeRequest with the code
 	 * */
@@ -51,7 +58,6 @@ public class Spotify {
 	      // Set access and refresh token for further "spotifyApi" object usage
 	      spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
 	      spotifyApi.setRefreshToken(authorizationCodeCredentials.getRefreshToken());
-	      
 	      
 	      System.out.println("Expires in: " + authorizationCodeCredentials.getExpiresIn());
 	    } catch (IOException | SpotifyWebApiException e) {

@@ -44,10 +44,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		//can establish session if required, but doesn't do anything yet
 		User user = new User();
 		
-	    final URI uri = Spotify.authorizationCodeUriRequest.execute();
+	    URI uri = Spotify.getUriRequest();
 
 	    System.out.println("URI: " + uri.toString());
 	    response.setContentType("application/json");
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 	    // write JSON string to output
 	    System.out.println(jsonObject.toString());
         out.write(jsonObject.toString());
-        // set response status to 200 (OK)
+        // set response status to 200 (server sets a response code to tell the front end that the response was successful)
         response.setStatus(200);
         
         out.close();

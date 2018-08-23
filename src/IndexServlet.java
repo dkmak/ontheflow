@@ -33,8 +33,7 @@ public class IndexServlet extends HttpServlet {
 		System.out.println(code);
 		Spotify.setCode(code);
 		Spotify.makeTokenRequests();
-		//takes the code, sets it in the Spotify class, then create the build
-		//setCall, callSync
+		
 		
 		
 	}
