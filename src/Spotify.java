@@ -18,6 +18,7 @@ public class Spotify {
 	private static AuthorizationCodeRequest authorizationCodeRequest;
 	private static AuthorizationCodeCredentials authorizationCodeCredentials;
 	
+	
 	public static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
 		          .setClientId(clientId)
 		          .setClientSecret(clientSecret)
@@ -31,17 +32,21 @@ public class Spotify {
 		          .show_dialog(true)
 		          .build();
 
-	
-	public void setCode(String c) {
-		System.out.println("Setting Code");
+	/*
+	 * Set the code returned by the Spotify API and build the authorizationCodeRequest with the code
+	 * */
+	public static void setCode(String c) {
+		System.out.println("Setting  Spotify Code");
 		code= c;
-		spotifyApi.authorizationCode(code).build();
+		authorizationCodeRequest =  spotifyApi.authorizationCode(code).build();
 	}
 	
-	//attempts to create accessTokens based on the out ids, and the code provided at login
-	public static void makeTokenReqests() {
+	/*
+	 * Set accessTokens that can be used to make requests to the Web API
+	 * */
+	public static void makeTokenRequests() {
 	    try {
-	      authorizationCodeRequest.execute();
+	      authorizationCodeCredentials= authorizationCodeRequest.execute();
 
 	      // Set access and refresh token for further "spotifyApi" object usage
 	      spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
