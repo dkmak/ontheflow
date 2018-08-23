@@ -4,33 +4,76 @@
 <meta charset="ISO-8859-1">
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Music App Login Page </title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>On the Flow | Music On The Go </title>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+	<title>On the Flow | Music On The Go </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	
-	
+	<!--Bootstrap CDN -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<!-- <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script> -->
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 	<link href="./mycss.css" type="text/css" rel="stylesheet"/>
 
-</head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 
 <body>
-	<div class= 'container'>
-	
-		<div class="row"> 
-	    	<h1>Index Page</h1>
-		</div>
-	
+
+	<div class="container vertical-center">
+		<img src="images/logo1.png"> 
 	</div>
+	
+	<div id="form-container" class="container">
+		<div class="form-group.required col-md-10 font">
+			<form id="input" method="POST" action="" >
+				<div id="locations">
+					<label>Enter Start Point: </label>
+					<input class="form-control" type="start" placeholder="Starting Point" required="true">
+					<label>Enter Destination:</label>
+					<input class="form-control" type="dest" placeholder="Destination" required="true">
+				</div>	
+				
+				<div id="transport" class="btn-group btn-group-lg">
+					<label>Form of Transport:</label>
+					<br>
+				  	<button type="button" class="btn btn-primary font">Car</button>
+ 				  	<button type="button" class="btn btn-primary font ">Bike</button>
+  					<button type="button" class="btn btn-primary font">Walk</button>
+				</div>
+					
+				<div id="keywords">
+					<label>Enter Keywords:</label>	
+					<input class="form-control" type="query" placeholder="Artist, Genre, Album, etc." required="true">
+					<br>
+					<button type="button" class="btn btn-success font">Create Playlist</button>
+				</div>
+			</form>	
+		</div>
+	</div>
+
 
 	<!-- include jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- include our own JS file -->
+
 	<script src="./js/index.js"></script>
+
 </body>
 
 </html>
