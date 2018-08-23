@@ -22,20 +22,6 @@ import com.wrapper.spotify.requests.authorization.authorization_code.Authorizati
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 private static final String clientId = "client";
-		private static final String clientSecret = "secret";
-		private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/app/index.html");
-
-		private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-		          .setClientId(clientId)
-		          .setClientSecret(clientSecret)
-		          .setRedirectUri(redirectUri)
-		          .build();
-		private static final AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
-		          .state("x4xkmn9pu3j6ukrs8n")
-		          .scope("user-read-birthdate,user-read-email")
-		          .show_dialog(true)
-		          .build();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -58,8 +44,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	    final URI uri = authorizationCodeUriRequest.execute();
+		//can establish session if required, but doesn't do anything yet
+		User user = new User();
+		
+	    URI uri = Spotify.getUriRequest();
 
 	    System.out.println("URI: " + uri.toString());
 	    response.setContentType("application/json");
@@ -73,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 	    // write JSON string to output
 	    System.out.println(jsonObject.toString());
         out.write(jsonObject.toString());
-        // set response status to 200 (OK)
+        // set response status to 200 (server sets a response code to tell the front end that the response was successful)
         response.setStatus(200);
         
         out.close();
