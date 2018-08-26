@@ -1,4 +1,11 @@
+import com.wrapper.spotify.SpotifyApi;
+import com.wrapper.spotify.exceptions.SpotifyWebApiException;
+import com.wrapper.spotify.model_objects.specification.Artist;
+import com.wrapper.spotify.requests.data.artists.GetArtistRequest;
 
+import java.io.IOException;
+//import java.util.concurrent.ExecutionException;
+//import java.util.concurrent.Future;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class IndexServlet
+ * Servlet implementation class SearchExampleServlet
  */
-@WebServlet(name = "IndexServlet", urlPatterns = "/api/index")
-public class IndexServlet extends HttpServlet {
+@WebServlet(name= "SearchExampleServlet", urlPatterns ="/api/searchexample")
+public class SearchExampleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IndexServlet() {
+    public SearchExampleServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,19 +34,9 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		String code = request.getParameter("code");
-		//System.out.println(code);
-		if(Spotify.returnCode()=="") {
-			Spotify.setCode(code);
-			Spotify.makeTokenRequests();
-		}else{
-			System.out.println("Request made");
-		}
-		//takes the code, sets it in the Spotify class, then create the build
-		//setCall, callSync
-		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String id= request.getParameter("id");
+		Spotify.getArtist(id);
 		
 	}
 
