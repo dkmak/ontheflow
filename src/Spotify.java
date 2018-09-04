@@ -15,8 +15,8 @@ import com.wrapper.spotify.requests.data.artists.GetArtistRequest;
  * Class to handle anything Spotify related(getting URI, getting tokens)
  * */
 public class Spotify {
-	private static final String CLIENT_ID = "***REMOVED***";
-	private static final String CLIENT_SECRET = "***REMOVED***";
+	private static final String CLIENT_ID = "";
+	private static final String CLIENT_SECRET = "";
 	//redirect link currently goes to your local computer
 	private static final URI REDIRECT_URI = SpotifyHttpManager.makeUri("http://localhost:8080/app/index.html");
 	private static String code="";
