@@ -26,11 +26,9 @@ public class Spotify {
 	private static String refreshToken;
 	
 	
-<<<<<<< HEAD
-	
-=======
+
 	//this is the API object. Once we give it all the proper credentials, we can make requests using this object.
->>>>>>> javatest
+
 	public static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
 		          .setClientId(CLIENT_ID)
 		          .setClientSecret(CLIENT_SECRET)
@@ -78,13 +76,11 @@ public class Spotify {
 	      // Set access and refresh token for further "spotifyApi" object usage
 	      accessToken = authorizationCodeCredentials.getAccessToken();
 	      refreshToken = authorizationCodeCredentials.getRefreshToken();
-	      
-<<<<<<< HEAD
-=======
+
 	      spotifyApi.setAccessToken(accessToken);
 	      spotifyApi.setRefreshToken(refreshToken);
 	      
->>>>>>> javatest
+
 	      System.out.println("Expires in: " + authorizationCodeCredentials.getExpiresIn());
 	    } catch (IOException | SpotifyWebApiException e) {
 	      System.out.println("Error: " + e.getMessage());
